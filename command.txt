@@ -1,0 +1,32 @@
+kubectl config current-context
+
+kubectl get nodes
+
+kubectl apply -f api1.yaml
+
+kubectl apply -f api2.yaml
+
+kubectl apply -f frontend.yaml
+
+kubectl get deployments
+
+kubectl get pods
+
+kubectl describe deployment api1
+kubectl describe deployment api2
+kubectl describe deployment frontend
+
+kubectl port-forward deployment/frontend 8080:5000
+http://localhost:8080
+
+-----------------------
+automatic scaling
+---------------------
+
+C:\Users\User\Documents\exercise1\k8s>notepad api1-hpa.yaml
+
+kubectl apply -f k8s\api1.yaml
+kubectl apply -f k8s\api1-hpa.yaml
+kubectl get hpa
+kubectl get deployment api1
+kubectl top pods
